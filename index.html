@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Buat Doi</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="game-container">
+        <!-- Start Screen -->
+        <div id="startScreen" class="overlay active">
+            <div class="overlay-content">
+                <h1>Buat Ayuuu</h1>
+                <p class="subtitle">Terbang Menuju Impian</p>
+                <p class="instruction">TAP atau SPACE untuk terbang</p>
+                <button id="startBtn" class="btn-game">MULAI</button>
+            </div>
+        </div>
+
+        <!-- Game Over Screen -->
+        <div id="gameOverScreen" class="overlay">
+            <div class="overlay-content">
+                <h1>💫</h1>
+                <h2>Jatuh itu Wajar</h2>
+                <p>Yang penting bangkit lagi kan? 😊</p>
+                <p class="score-display">Score: <span id="finalScore">0</span></p>
+                <button id="retryBtn" class="btn-game">COBA LAGI</button>
+            </div>
+        </div>
+
+        <!-- Victory Screen -->
+        <div id="victoryScreen" class="overlay">
+            <div class="overlay-content victory">
+                <h1>✨ KAMU SAMPAI! ✨</h1>
+                <p class="victory-message">
+                    <em>Seperti burung yang terbang bebas,</em><br>
+                    <em>Kamu melewati setiap rintangan dengan anggun.</em><br><br>
+                    
+                    <strong>Perjalanan ini mengingatkanku...</strong><br>
+                    Bahwa setiap usaha memiliki makna,<br>
+                    Bahwa setiap jatuh adalah pelajaran,<br>
+                    Dan bahwa bersamamu, semua lebih indah. 🌸<br><br>
+                    
+                    <em>Terima kasih sudah sampai di sini.</em><br>
+                    <em>Semoga kita bisa terus terbang bersama... 💕</em>
+                </p>
+                <p class="score-display">Final Score: <span id="victoryScore">0</span></p>
+                <button id="playAgainBtn" class="btn-game">TERBANG LAGI</button>
+            </div>
+        </div>
+
+        <!-- HUD -->
+        <div id="hud" class="hud">
+            <div class="score-counter">SCORE: <span id="score">0</span></div>
+            <div class="distance-counter">Target: <span id="target">50</span></div>
+        </div>
+
+        <!-- Game Canvas -->
+        <canvas id="gameCanvas"></canvas>
+    </div>
+
+    <script src="game.js"></script>
+</body>
+</html>

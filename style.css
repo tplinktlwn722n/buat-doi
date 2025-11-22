@@ -1,0 +1,253 @@
+/* ===========================
+   GLOBAL STYLES - FLAPPY STYLE
+   =========================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+}
+
+body {
+    font-family: 'Quicksand', sans-serif;
+    overflow: hidden;
+    background: linear-gradient(135deg, #E0F7FA 0%, #80DEEA 100%);
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    touch-action: none;
+}
+
+/* ===========================
+   GAME CONTAINER
+   =========================== */
+.game-container {
+    position: relative;
+    width: 100%;
+    max-width: 500px;
+    height: 700px;
+    background: linear-gradient(180deg, #87CEEB 0%, #B2EBF2 100%);
+    border-radius: 20px;
+    box-shadow: 0 20px 60px rgba(0, 150, 200, 0.3);
+    overflow: hidden;
+}
+
+#gameCanvas {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+/* ===========================
+   HUD
+   =========================== */
+.hud {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    right: 20px;
+    z-index: 10;
+    display: none;
+}
+
+.hud.active {
+    display: block;
+}
+
+.score-counter {
+    background: rgba(255, 255, 255, 0.9);
+    padding: 10px 20px;
+    border-radius: 15px;
+    font-weight: 700;
+    color: #00796B;
+    font-size: 20px;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0, 150, 136, 0.3);
+    margin-bottom: 10px;
+}
+
+.distance-counter {
+    background: rgba(255, 255, 255, 0.8);
+    padding: 8px 15px;
+    border-radius: 12px;
+    font-weight: 600;
+    color: #00897B;
+    font-size: 14px;
+    text-align: center;
+}
+
+/* ===========================
+   OVERLAY SCREENS
+   =========================== */
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(178, 235, 242, 0.95);
+    backdrop-filter: blur(10px);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+    animation: fadeIn 0.3s ease;
+}
+
+.overlay.active {
+    display: flex;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.overlay-content {
+    text-align: center;
+    padding: 40px;
+    max-width: 90%;
+}
+
+.overlay-content h1 {
+    font-size: 48px;
+    color: #00796B;
+    margin-bottom: 15px;
+    font-weight: 700;
+    text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.5);
+}
+
+.overlay-content h2 {
+    font-size: 32px;
+    color: #00796B;
+    margin-bottom: 10px;
+}
+
+.overlay-content p {
+    font-size: 18px;
+    color: #00897B;
+    margin-bottom: 10px;
+    line-height: 1.6;
+}
+
+.subtitle {
+    font-size: 24px !important;
+    font-weight: 600;
+    color: #00897B !important;
+}
+
+.instruction {
+    font-size: 16px !important;
+    margin-top: 20px;
+    color: #00796B !important;
+    font-weight: 600;
+}
+
+.score-display {
+    font-size: 20px !important;
+    color: #00796B !important;
+    margin: 20px 0 !important;
+    font-weight: 700;
+}
+
+.score-display span {
+    color: #00897B;
+}
+
+.victory-message {
+    font-size: 16px !important;
+    line-height: 1.8 !important;
+    margin: 25px 0 !important;
+    color: #666 !important;
+}
+
+.victory-message strong {
+    color: #00796B;
+    font-size: 18px;
+    display: block;
+    margin: 15px 0;
+}
+
+.victory-message em {
+    color: #26A69A;
+    font-style: italic;
+}
+
+/* ===========================
+   BUTTONS
+   =========================== */
+.btn-game {
+    background: linear-gradient(135deg, #26A69A, #00897B);
+    color: white;
+    border: none;
+    padding: 15px 40px;
+    font-size: 20px;
+    font-weight: 700;
+    border-radius: 50px;
+    cursor: pointer;
+    margin-top: 25px;
+    box-shadow: 0 8px 25px rgba(0, 150, 136, 0.4);
+    transition: all 0.3s ease;
+    font-family: 'Quicksand', sans-serif;
+}
+
+.btn-game:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 35px rgba(0, 150, 136, 0.6);
+}
+
+.btn-game:active {
+    transform: translateY(0);
+}
+
+/* ===========================
+   RESPONSIVE
+   =========================== */
+@media (max-width: 768px) {
+    body {
+        align-items: flex-start;
+    }
+
+    .game-container {
+        max-width: 100%;
+        height: 100vh;
+        border-radius: 0;
+    }
+
+    .overlay-content h1 {
+        font-size: 36px;
+    }
+
+    .overlay-content h2 {
+        font-size: 24px;
+    }
+
+    .overlay-content p {
+        font-size: 14px;
+    }
+
+    .victory-message {
+        font-size: 14px !important;
+    }
+
+    .btn-game {
+        padding: 12px 30px;
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 480px) {
+    .overlay-content h1 {
+        font-size: 28px;
+    }
+
+    .victory-message {
+        font-size: 12px !important;
+    }
+
+    .score-counter {
+        font-size: 16px;
+    }
+}
